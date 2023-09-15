@@ -2,19 +2,20 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const Container = styled.div`
-  display: flex;
   justify-content: start;
   max-width: 1150px;
   margin: 12px auto;
   padding: 0 15px;
-
-  border-bottom: 1px solid black;
 `;
 
 export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  margin-bottom: 16px;
+  border-bottom: 1px solid black;
 `;
 
 export const Nav = styled.nav`
@@ -33,14 +34,16 @@ export const NavList = styled.ul`
 export const NavItem = styled.li`
   &:first-child {
     margin-right: 10px;
+    margin-bottom: 8px;
   }
 `;
 
 export const NavLinkStyled = styled(NavLink)`
   padding: 8px 16px;
+
   border-radius: 4px;
   text-decoration: none;
-  color: black;
+  color: #1b4bec;
   font-weight: 500;
 
   &.active {
@@ -51,8 +54,10 @@ export const NavLinkStyled = styled(NavLink)`
 
 export const Section = styled.section``;
 
-export const Title = styled.h2`
-  font-size: 600;
-  font-weight: 400;
-  color: blue;
+export const Title = styled.h1`
+  display: flex;
+  justify-content: center;
+
+  font-weight: 800;
+  color: #1b4bec;
 `;

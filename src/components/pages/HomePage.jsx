@@ -3,8 +3,8 @@ import { getTrendingMovies } from '../../service/api';
 import { MoviesList } from 'components/MoviesList/MoviesList';
 import { Loader } from '../Loader/Loader';
 import {
-  Container,
   Section,
+  Container,
   Title,
 } from 'components/SharedLayout/SharedLayout.styled';
 
@@ -21,8 +21,10 @@ export const HomePage = () => {
   console.log(movies);
   return (
     <Section>
-      <Title>Trending today</Title>
-      {!isLoading ? <MoviesList list={movies} /> : <Loader />}
+      <Container>
+        <Title>Trending today</Title>
+        {!isLoading ? <MoviesList list={movies} /> : <Loader />}
+      </Container>
     </Section>
   );
 };

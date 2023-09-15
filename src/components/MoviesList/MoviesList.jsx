@@ -5,10 +5,14 @@ export const MoviesList = ({ list }) => {
   const location = useLocation();
   return (
     <List>
-      {list.map(({ id, title, backdrop_path }) => (
+      {list.map(({ id, title, poster_path }) => (
         <Item key={id}>
           <Link to={`/movies/${id}`} state={{ from: location }}>
-            <img src={backdrop_path} alt={title} />
+            <img
+              src={`https://image.tmdb.org/t/p/w200/${poster_path}`}
+              alt={title}
+            />
+            <p>{title}</p>
           </Link>
         </Item>
       ))}
