@@ -7,11 +7,11 @@ export const List = styled.ul`
 `;
 
 export const Item = styled.li`
-  min-width: 200px;
-  width: 160px;
+  width: 200px;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-right: 8px;
+
   border: 1px solid #663fd1;
   padding-bottom: 10px;
   border-radius: 8px;
@@ -33,7 +33,7 @@ export const Item = styled.li`
   }
 
   & img {
-    width: 160px;
-    height: 220px;
+    width: 200px;
+    height: 250px;
   }
 `;

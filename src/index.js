@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
 import { App } from 'components/App';
+import { GlobalStyles } from 'components/styles/GlobalStyles';
 import './index.css';
+import { Global } from '@emotion/react';
 
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter basename="/goit-react-hw-05-movies">
+      <Global styles={GlobalStyles} />
       <App />
     </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );

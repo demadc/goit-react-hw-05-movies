@@ -18,7 +18,7 @@ export const HomePage = () => {
       .then(setMovies)
       .finally(() => setIsLoading(false));
   }, []);
-  console.log(movies);
+  // console.log(movies);
   return (
     <Section>
       <Container>

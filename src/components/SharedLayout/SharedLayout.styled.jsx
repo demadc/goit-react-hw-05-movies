@@ -8,19 +8,14 @@ export const Container = styled.div`
   padding: 0 15px;
 `;
 
-export const Header = styled.header`
+export const Nav = styled.nav`
   display: flex;
+  justify-content: start;
   align-items: center;
-  justify-content: space-between;
   gap: 12px;
   padding: 8px 0;
   margin-bottom: 16px;
   border-bottom: 1px solid black;
-`;
-
-export const Nav = styled.nav`
-  display: flex;
-  justify-content: center;
 `;
 
 export const NavList = styled.ul`
