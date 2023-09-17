@@ -4,6 +4,7 @@ import { Container } from './SharedLayout/SharedLayout.styled';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { HomePage } from './pages/HomePage';
 import { MoviesPage } from './pages/MoviesPage';
+
 import { MovieDetailsPage } from './pages/MovieDetailsPage';
 import { Cast } from 'components/Cast/Cast';
 import { Reviews } from 'components/Reviews/Reviews';

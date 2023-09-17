@@ -8,19 +8,22 @@ export const SearchFormStyled = styled.form`
   margin-right: auto;
 
   position: relative;
-
-  margin-bottom: ${props => props.theme.spacing.step * 20}px;
 `;
 
 export const BtnSearch = styled.button`
-  width: 50px;
-  height: 50px;
-
-  font-size: 20px;
-  font-weight: bold;
-  color: #fff;
+  width: 20px;
+  height: 20px;
 
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 10px;
+  left: 100%;
+`;
+
+export const Input = styled.input`
+  width: 100%;
+  padding: 8px 12px 8px 12px;
+  border-radius: 8px;
+
+  font: inherit;
+  cursor: pointer;
 `;

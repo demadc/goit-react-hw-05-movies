@@ -4,6 +4,7 @@ import { useState } from 'react';
 import {
   SearchFormStyled,
   BtnSearch,
+  Input,
 } from 'components/SearchForm/SearchForm.styled';
 
 export const SearchForm = ({ handleQuery }) => {
@@ -20,10 +21,11 @@ export const SearchForm = ({ handleQuery }) => {
   };
 
   return (
-    <SearchFormStyled onChange={handleChange}>
-      <BtnSearch type="submit" onSubmit={handleSubmit}>
-        <FiSearch size="16px" />
+    <SearchFormStyled>
+      <BtnSearch onSubmit={handleSubmit} type="submit">
+        <FiSearch size="20px" />
       </BtnSearch>
+      <Input onChange={handleChange}></Input>
     </SearchFormStyled>
   );
 };

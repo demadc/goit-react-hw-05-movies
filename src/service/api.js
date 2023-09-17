@@ -15,4 +15,13 @@ export const getTrendingMovies = async () => {
   return movies;
 };
 
+export const fetchByQuery = async query => {
+  const { data } = await instance.get('/search/movie', {
+    params: {
+      query: query,
+    },
+  });
+  return data;
+};
+
 //API Read Access Token=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4M2NiNGMyMzZmZTNjZTg5OTYwZTg5OWMyNmM2NjM0ZCIsInN1YiI6IjY1MDA3NWU2ZTBjYTdmMDEyZWI4YzQ0MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.iXlqdE9D0Decv0sTrThlk6LcYGyTwiAC-bW_wb9YYT0
