@@ -12,7 +12,7 @@ const instance = axios.create({
 export const getTrendingMovies = async () => {
   const { data } = await instance.get('/trending/movie/day');
   const movies = data.results;
-  console.log(data);
+  //   console.log(data);
   return movies;
 };
 
@@ -22,6 +22,12 @@ export const fetchByQuery = async query => {
       query: query,
     },
   });
+  //   console.log(data);
+  return data;
+};
+
+export const fetchById = async id => {
+  const { data } = await instance.get(`/movie/${id}`);
   console.log(data);
   return data;
 };
