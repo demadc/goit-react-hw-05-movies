@@ -4,10 +4,13 @@ import { useState, useEffect } from 'react';
 import { Container } from 'components/SharedLayout/SharedLayout.styled';
 import { Section } from 'components/SearchForm/SearchForm.styled';
 import { SearchForm } from 'components/SearchForm/SearchForm';
+import { MoviesList } from 'components/MoviesList/MoviesList';
+import { Loader } from 'components/Loader/Loader';
+
 import { fetchByQuery } from 'service/api';
 
 export const MoviesPage = () => {
-  const [searchParams, setSearchParams] = useSearchParams('');
+  const [searchParams, setSearchParams] = useSearchParams();
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -16,19 +19,48 @@ export const MoviesPage = () => {
     if (!value) return;
     setIsLoading(true);
     fetchByQuery(value)
-      .then(setMovies)
-      .catch(err => console.log(err))
+      .then(response => {
+        setMovies(response.results);
+      })
+      .catch(error => console.log(error))
       .finally(() => setIsLoading(false));
   }, [searchParams]);
 
   const handleQuery = query => {
-    setSearchParams(query);
+    setSearchParams({ query });
   };
+
+  //   const updateQuery = query => {
+  //     const nextParams = query !== '' ? { query } : {};
+  //     setSearchParams(nextParams);
+  //   };
+
+  //   useEffect(() => {
+  //     if (!query) {
+  //       return;
+  //     }
+
+  //     const fetchMovies = async () => {
+  //       try {
+  //         setIsLoading(true);
+  //         setError(null);
+
+  //         const result = await fetchByQuery(query);
+  //         setMovies(result.results);
+  //       } catch (e) {
+  //         setError(e.toJSON());
+  //       } finally {
+  //         setIsLoading(false);
+  //       }
+  //     };
+  //     fetchMovies();
+  //   }, [query]);
 
   return (
     <Section>
       <Container>
-        <SearchForm handleQuery={handleQuery} />
+        <SearchForm value={query} onChange={handleQuery} />
+        {isLoading ? <Loader /> : <MoviesList list={movies} />}
       </Container>
     </Section>
   );

@@ -25,7 +25,7 @@ export const Item = styled.li`
 
   & a {
     text-decoration: none;
-    color: #117fda;
+    color: #0e84df;
   }
 
   & p {

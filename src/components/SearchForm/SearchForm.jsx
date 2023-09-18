@@ -11,7 +11,7 @@ export const SearchForm = ({ handleQuery }) => {
   const [query, setQuery] = useState('');
 
   const handleChange = e => {
-    setQuery(e.targrt.value);
+    setQuery(e.target.value);
   };
 
   const handleSubmit = e => {
@@ -25,7 +25,7 @@ export const SearchForm = ({ handleQuery }) => {
       <BtnSearch onSubmit={handleSubmit} type="submit">
         <FiSearch size="20px" />
       </BtnSearch>
-      <Input onChange={handleChange}></Input>
+      <Input onChange={handleChange} value={query}></Input>
     </SearchFormStyled>
   );
 };

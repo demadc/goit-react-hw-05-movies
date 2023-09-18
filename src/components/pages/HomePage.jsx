@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+
 import { getTrendingMovies } from '../../service/api';
 import { MoviesList } from 'components/MoviesList/MoviesList';
 import { Loader } from '../Loader/Loader';
