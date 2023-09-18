@@ -22,7 +22,7 @@ export const fetchByQuery = async query => {
       query: query,
     },
   });
-  console.log(query);
+  console.log(data);
   return data;
 };
 

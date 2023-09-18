@@ -8,10 +8,14 @@ export const MoviesList = ({ list }) => {
       {list.map(({ id, title, poster_path }) => (
         <Item key={id}>
           <Link to={`/movies/${id}`} state={{ from: location }}>
-            <img
-              src={`https://image.tmdb.org/t/p/w200/${poster_path}`}
-              alt={title}
-            />
+            {poster_path ? (
+              <img
+                src={`https://image.tmdb.org/t/p/w200/${poster_path}`}
+                alt={title}
+              />
+            ) : (
+              <p>No poster available</p>
+            )}
             <p>{title}</p>
           </Link>
         </Item>

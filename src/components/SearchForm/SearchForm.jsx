@@ -2,9 +2,9 @@ import { FiSearch } from 'react-icons/fi';
 import { useState } from 'react';
 
 import {
-  SearchFormStyled,
   BtnSearch,
   Input,
+  SearchFormStyled,
 } from 'components/SearchForm/SearchForm.styled';
 
 export const SearchForm = ({ handleQuery }) => {
@@ -18,11 +18,12 @@ export const SearchForm = ({ handleQuery }) => {
     e.preventDefault();
     if (!query) return;
     handleQuery(query);
+    setQuery('');
   };
 
   return (
-    <SearchFormStyled>
-      <BtnSearch onSubmit={handleSubmit} type="submit">
+    <SearchFormStyled onSubmit={handleSubmit}>
+      <BtnSearch type="submit">
         <FiSearch size="20px" />
       </BtnSearch>
       <Input onChange={handleChange} value={query}></Input>

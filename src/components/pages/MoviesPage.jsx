@@ -14,6 +14,10 @@ export const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
+  const handleQuery = query => {
+    setSearchParams({ query });
+  };
+
   useEffect(() => {
     const value = searchParams.get('query');
     if (!value) return;
@@ -26,14 +30,10 @@ export const MoviesPage = () => {
       .finally(() => setIsLoading(false));
   }, [searchParams]);
 
-  const handleQuery = query => {
-    setSearchParams({ query });
-  };
-
   return (
     <Section>
       <Container>
-        <SearchForm onChange={handleQuery} />
+        <SearchForm handleQuery={handleQuery} />
         {isLoading ? <Loader /> : <MoviesList list={movies} />}
       </Container>
     </Section>
