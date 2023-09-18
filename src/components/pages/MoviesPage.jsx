@@ -30,32 +30,6 @@ export const MoviesPage = () => {
     setSearchParams({ query });
   };
 
-  //   const updateQuery = query => {
-  //     const nextParams = query !== '' ? { query } : {};
-  //     setSearchParams(nextParams);
-  //   };
-
-  //   useEffect(() => {
-  //     if (!query) {
-  //       return;
-  //     }
-
-  //     const fetchMovies = async () => {
-  //       try {
-  //         setIsLoading(true);
-  //         setError(null);
-
-  //         const result = await fetchByQuery(query);
-  //         setMovies(result.results);
-  //       } catch (e) {
-  //         setError(e.toJSON());
-  //       } finally {
-  //         setIsLoading(false);
-  //       }
-  //     };
-  //     fetchMovies();
-  //   }, [query]);
-
   return (
     <Section>
       <Container>
