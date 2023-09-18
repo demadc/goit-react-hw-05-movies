@@ -59,7 +59,7 @@ export const MoviesPage = () => {
   return (
     <Section>
       <Container>
-        <SearchForm value={query} onChange={handleQuery} />
+        <SearchForm onChange={handleQuery} />
         {isLoading ? <Loader /> : <MoviesList list={movies} />}
       </Container>
     </Section>
