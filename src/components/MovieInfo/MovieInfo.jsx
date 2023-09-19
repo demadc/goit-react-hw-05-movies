@@ -8,7 +8,13 @@ import {
   MovieRating,
   MovieOverview,
   MovieGenres,
+  GenresText,
   Accent,
+  GenresDesc,
+  WrapperDesc,
+  NavTab,
+  Link,
+  WrapperTitle,
 } from 'components/MovieInfo/MovieInfo.styled';
 
 export const MovieInfo = ({ movie }) => {
@@ -38,12 +44,24 @@ export const MovieInfo = ({ movie }) => {
               Overview: <Accent>{overview}</Accent>
             </MovieOverview>
 
-            <MovieGenres>
-              Genres: <Accent>{genres.join(', ')}</Accent>
-            </MovieGenres>
+            <MovieGenres>Genres</MovieGenres>
+            <GenresDesc>
+              {genres &&
+                genres.map(item => (
+                  <GenresText key={item.id}>{item.name}</GenresText>
+                ))}
+            </GenresDesc>
           </Description>
         </Wrapper>
       </Container>
+
+      <WrapperDesc>
+        <WrapperTitle>Additional information</WrapperTitle>
+        <NavTab>
+          <Link to="cast">Cast</Link>
+          <Link to="reiwers">Reiwers</Link>
+        </NavTab>
+      </WrapperDesc>
     </>
   );
 };

@@ -28,6 +28,12 @@ export const fetchByQuery = async query => {
 
 export const fetchById = async id => {
   const { data } = await instance.get(`/movie/${id}`);
+  //   console.log(data);
+  return data;
+};
+
+export const fetchCredits = async id => {
+  const { data } = await instance.get(`/movie/${id}/credits`);
   console.log(data);
   return data;
 };
