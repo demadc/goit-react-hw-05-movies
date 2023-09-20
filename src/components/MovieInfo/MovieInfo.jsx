@@ -16,6 +16,7 @@ import {
   Link,
   WrapperTitle,
 } from 'components/MovieInfo/MovieInfo.styled';
+import { Outlet } from 'react-router-dom';
 
 export const MovieInfo = ({ movie }) => {
   if (!movie) {
@@ -59,8 +60,9 @@ export const MovieInfo = ({ movie }) => {
         <WrapperTitle>Additional information</WrapperTitle>
         <NavTab>
           <Link to="cast">Cast</Link>
-          <Link to="reiwers">Reiwers</Link>
+          <Link to="reviews">Reviews</Link>
         </NavTab>
+        <Outlet />
       </WrapperDesc>
     </>
   );

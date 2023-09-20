@@ -4,22 +4,29 @@ import { fetchCredits } from 'service/api';
 
 import { CastList } from 'components/Cast/CastList';
 
-export const Cast = () => {
+const Cast = () => {
   const [movieCast, setMovieCast] = useState([]);
   const { movieId } = useParams();
 
-  console.log(movieCast);
+  //   console.log(movieCast);
 
   useEffect(() => {
-    if (!movieCast) return;
-    fetchCredits(movieCast)
-      .then(setMovieCast)
+    fetchCredits(movieId)
+      .then(response => {
+        setMovieCast(response.cast);
+      })
       .catch(error => console.log(error));
-  }, [movieId, movieCast]);
+  }, [movieId]);
+
+  if (!movieCast) {
+    return;
+  }
 
   if (movieCast.length === 0) {
-    return <p>No, cast about this movie.</p>;
+    return <p>No, cast about this movie</p>;
   }
 
   return <CastList movieCast={movieCast} />;
 };
+
+export default Cast;

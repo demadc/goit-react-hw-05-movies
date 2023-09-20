@@ -34,6 +34,12 @@ export const fetchById = async id => {
 
 export const fetchCredits = async id => {
   const { data } = await instance.get(`/movie/${id}/credits`);
+  //   console.log(data);
+  return data;
+};
+
+export const fetchReviews = async id => {
+  const { data } = await instance.get(`/movie/${id}/reviews`);
   console.log(data);
   return data;
 };

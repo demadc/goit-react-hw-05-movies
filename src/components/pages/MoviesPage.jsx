@@ -9,7 +9,7 @@ import { Loader } from 'components/Loader/Loader';
 
 import { fetchByQuery } from 'service/api';
 
-export const MoviesPage = () => {
+const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -39,3 +39,4 @@ export const MoviesPage = () => {
     </Section>
   );
 };
+export default MoviesPage;

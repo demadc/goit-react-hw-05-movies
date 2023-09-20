@@ -9,7 +9,7 @@ import {
   Title,
 } from 'components/SharedLayout/SharedLayout.styled';
 
-export const HomePage = () => {
+const HomePage = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -29,3 +29,5 @@ export const HomePage = () => {
     </Section>
   );
 };
+
+export default HomePage;

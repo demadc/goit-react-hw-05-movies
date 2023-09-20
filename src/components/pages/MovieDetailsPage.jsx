@@ -9,7 +9,7 @@ import {
   Section,
 } from 'components/SharedLayout/SharedLayout.styled';
 
-export const MovieDetailsPage = () => {
+const MovieDetailsPage = () => {
   const { movieId } = useParams();
   //   console.log(movieId);
   const [isLoading, setIsLoading] = useState(false);
@@ -49,3 +49,5 @@ export const MovieDetailsPage = () => {
     </Section>
   );
 };
+
+export default MovieDetailsPage;

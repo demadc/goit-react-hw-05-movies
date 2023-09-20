@@ -7,7 +7,11 @@ export const CastList = ({ movieCast }) => {
     return (
       <CastItem key={id}>
         <img
-          src={`https://image.tmdb.org/t/p/w300${profile_path}`}
+          src={
+            profile_path
+              ? `https://image.tmdb.org/t/p/w300${profile_path}`
+              : '/path/to/placeholder-image.jpg'
+          }
           alt={original_name}
         />
         <p>{original_name}</p>
