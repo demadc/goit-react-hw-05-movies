@@ -18,6 +18,8 @@ import {
 } from 'components/MovieInfo/MovieInfo.styled';
 import { Outlet } from 'react-router-dom';
 
+import defaultPosterUrl from 'components/Image/placehold.it-500x750b.gif';
+
 export const MovieInfo = ({ movie }) => {
   if (!movie) {
     return null;
@@ -31,7 +33,11 @@ export const MovieInfo = ({ movie }) => {
       <Container>
         <Wrapper>
           <Poster
-            src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+            src={
+              poster_path
+                ? `https://image.tmdb.org/t/p/w300/${poster_path}`
+                : defaultPosterUrl
+            }
             alt={title}
           />
           <Description>

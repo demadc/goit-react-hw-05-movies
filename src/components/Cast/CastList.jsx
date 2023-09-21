@@ -1,4 +1,5 @@
 import { CastResults, CastItem } from 'components/Cast/Cast.styled';
+import defaultPosterUrl from 'components/Image/placehold.it-500x750b.gif';
 
 export const CastList = ({ movieCast }) => {
   const results = movieCast.map(item => {
@@ -10,7 +11,7 @@ export const CastList = ({ movieCast }) => {
           src={
             profile_path
               ? `https://image.tmdb.org/t/p/w300${profile_path}`
-              : '/path/to/placeholder-image.jpg'
+              : defaultPosterUrl
           }
           alt={original_name}
         />
