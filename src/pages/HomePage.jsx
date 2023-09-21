@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 
-import { getTrendingMovies } from '../../service/api';
+import { getTrendingMovies } from '../service/api';
 import { MoviesList } from 'components/MoviesList/MoviesList';
-import { Loader } from '../Loader/Loader';
+import { Loader } from '../components/Loader/Loader';
 import {
   Section,
   Container,

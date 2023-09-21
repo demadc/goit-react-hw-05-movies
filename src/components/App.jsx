@@ -3,11 +3,9 @@ import React, { lazy } from 'react';
 import { Container } from './SharedLayout/SharedLayout.styled';
 
 const SharedLayout = lazy(() => import('components/SharedLayout/SharedLayout'));
-const HomePage = lazy(() => import('components/pages/HomePage'));
-const MoviesPage = lazy(() => import('components/pages/MoviesPage'));
-const MovieDetailsPage = lazy(() =>
-  import('components/pages/MovieDetailsPage')
-);
+const HomePage = lazy(() => import('pages/HomePage'));
+const MoviesPage = lazy(() => import('pages/MoviesPage'));
+const MovieDetailsPage = lazy(() => import('pages/MovieDetailsPage'));
 const Cast = lazy(() => import('components/Cast/Cast'));
 const Reviews = lazy(() => import('components/Reviews/Reviews'));
 
